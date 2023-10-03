@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hms_example/ScanPage.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'LocationPage.dart';
 import 'MapPage.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const MyHomePage(),
         '/MapPage': (context) => const MapPage(),
         '/LocationPage': (context) => const LocationPage(),
+        '/ScanPage': (context) => const ScanPage(),
       },
     );
   }
@@ -69,6 +71,12 @@ class MyHomePage extends StatelessWidget {
                 child: const Text('Open Location Page'),
                 onPressed: () {
                   requestPerms("Location");
+                },
+              ),
+              ElevatedButton(
+                child: const Text('Open Scan Page'),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/ScanPage');
                 },
               )
             ],
